@@ -5,7 +5,7 @@ ROS 2 Jazzy + Gazebo simulation for a drone that searches for ArUco markers and 
 - `coverage_run.launch.py`: coverage-style search over an open arena.
 - `maze_run.launch.py`: maze flight with lidar-based obstacle avoidance and ArUco docking.
 
-The docking target is ArUco ID `50`.
+The docking target is ArUco ID.
 
 ## Demo
 
@@ -26,7 +26,7 @@ This starts Gazebo, RViz, the ROS-Gazebo bridge, the drone model, and the defaul
 
 ### Coverage Mission
 
-`coverage_run.launch.py` runs the drone in an open arena. The drone follows a zigzag coverage path, scans the ground with the downward camera, and switches to docking when it detects ArUco ID `50`.
+`coverage_run.launch.py` runs the drone in an open arena. The drone follows a zigzag coverage path, scans the ground with the downward camera, and switches to docking when it detects ArUco ID `3`.
 
 ### Maze Mission
 
@@ -35,20 +35,10 @@ This starts Gazebo, RViz, the ROS-Gazebo bridge, the drone model, and the defaul
 ## Mission Flow
 
 ```text
-Take off -> search -> detect ArUco ID 50 -> center marker in camera -> descend -> land
+Take off -> search -> detect ArUco ID -> center marker in camera -> descend -> land
 ```
 
 The drone uses a downward camera for ArUco detection. During docking, it first moves in `x/y` to place the marker near the image center, then descends toward the pad.
-
-## Marker IDs
-
-```text
-ID 50  docking pad
-ID 42  bomb marker / no landing
-ID 23  supply marker
-ID 3   extra arena marker
-ID 65  extra arena marker
-```
 
 ## Project Layout
 
