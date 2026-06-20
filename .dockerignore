@@ -1,0 +1,6 @@
+.git
+workspace/build
+workspace/install
+workspace/log
+**/__pycache__
+**/*.pyc
