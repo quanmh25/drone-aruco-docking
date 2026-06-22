@@ -53,9 +53,8 @@ def generate_launch_description():
         arguments=[
             '-topic', 'robot_description',
             '-name', 'parrot_bebop',
-            '-x', '1',
-            '-y', '0.34',
-            '-z', '0.1'
+            # '-x', '1', '-y', '0.34', '-z', '0.1'
+            '-x', '4', '-y', '3', '-z', '0.1',
         ],
         output='screen'
     )
